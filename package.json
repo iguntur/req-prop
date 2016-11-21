@@ -1,0 +1,35 @@
+{
+  "name": "req-prop",
+  "version": "0.0.0",
+  "description": "Lazy require config file. Also get, set, destroy property using dot-notation",
+  "license": "MIT",
+  "repository": "iguntur/req-prop",
+  "author": {
+    "name": "Guntur Poetra",
+    "email": "poetra.guntur@gmail.com",
+    "url": "http://guntur.starmediateknik.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "config"
+  ],
+  "dependencies": {
+    "dot-prop": "^4.1.0",
+    "resolve-from": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
