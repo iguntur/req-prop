@@ -1,6 +1,6 @@
 {
   "name": "req-prop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lazy require config file. Also get, set, destroy property using dot-notation",
   "license": "MIT",
   "repository": "iguntur/req-prop",
