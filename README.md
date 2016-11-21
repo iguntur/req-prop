@@ -36,9 +36,9 @@ module.exports = {
 // ~/code/dev-app/lib/database/api/v1/index.js
 const reqProp = require('req-prop');
 
-const setting = reqProp('./config/setting');
+const setting = reqProp('api', './config/setting');
 
-console.log(setting.get('app.name'));
+console.log(setting.get('api.app.name'));
 ```
 
 ```bash
@@ -50,7 +50,12 @@ $ node lib/database/api/v1/index.js
 
 ## API
 
-### reqProp(moduleId)
+### reqProp(key, moduleId)
+
+#### key
+
+- Type `string`
+- Required: `true`
 
 #### moduleId
 

@@ -1,24 +1,28 @@
 import test from 'ava';
 import m from './';
 
-test(`app.name === 'unicorn'`, t => {
-	const setting = m('./fixtures/setting');
-	t.is(setting.get('app.name'), 'unicorn');
-	t.true(setting.get('app.name') === 'unicorn');
+test(`setting.app.name === 'unicorn'`, t => {
+	const config = m('setting', './fixtures/setting');
+	t.is(config.get('setting.app.name'), 'unicorn');
+	t.true(config.get('setting.app.name') === 'unicorn');
 });
 
 test(`assign item`, t => {
-	const setting = m('./fixtures/setting');
-	setting.extend('app.name', 'lux');
-	setting.extend('foo', 'bar');
-	t.deepEqual(setting.get(), {
-		app: {name: 'lux'},
+	const config = m('setting', './fixtures/setting');
+	config.extend('setting.app.name', 'lux');
+	config.extend('setting.app.baz', 'quux');
+	config.extend('setting.foo', 'bar');
+	t.deepEqual(config.get('setting'), {
+		app: {
+			name: 'lux',
+			baz: 'quux'
+		},
 		foo: 'bar'
 	});
 });
 
 test(`clear item`, t => {
-	const setting = m('./fixtures/setting');
-	setting.clear();
-	t.deepEqual(setting.get(), {});
+	const config = m('setting', './fixtures/setting');
+	config.clear();
+	t.deepEqual(config.get(), {});
 });

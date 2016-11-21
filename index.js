@@ -29,11 +29,11 @@ const config = {
 	}
 };
 
-module.exports = moduleId => {
+module.exports = (key, moduleId) => {
 	moduleId = resolveFrom('.', moduleId);
 	moduleId = require(moduleId);
 
-	config.extend(moduleId);
+	config.extend(key, moduleId);
 
 	return config;
 };
